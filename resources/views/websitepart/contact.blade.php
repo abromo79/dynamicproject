@@ -366,6 +366,61 @@
     </div>
 </section>
 
+<!-- Map Section -->
+<section class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold mb-3">Find Us</h2>
+            <p class="lead text-muted">Visit our office and discover how we can help you achieve your goals</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="map-container">
+                    <div id="contactMap" style="height: 500px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"></div>
+                </div>
+                
+                <!-- Map Info Card -->
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-map-marker-alt text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Our Location</h5>
+                                <p class="card-text text-muted">Kijana Hub Africa<br>Tanzania, East Africa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-clock text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Office Hours</h5>
+                                <p class="card-text text-muted">Monday - Friday<br>8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-directions text-primary fa-2x"></i>
+                                </div>
+                                <h5 class="card-title">Get Directions</h5>
+                                <p class="card-text text-muted">Use the map above to navigate to our office location</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Newsletter Section -->
 <section class="py-5 bg-light">
     <div class="container py-5">
@@ -957,6 +1012,51 @@ function makeCall() {
 function openEmail() {
     window.open('mailto:info@kijanahub.africa', '_self');
 }
+
+// Initialize OpenStreetMap
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the map centered on the provided coordinates
+    const map = L.map('contactMap').setView([-6.7919362787802555, 39.208469751664154,], 15);
+    
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    
+    // Add a custom marker for Kijana Hub Africa
+    const customIcon = L.divIcon({
+        html: '<div style="background: linear-gradient(135deg, #41e081, #d8dc5a); color: white; padding: 8px 12px; border-radius: 20px; font-weight: bold; box-shadow: 0 2px 10px rgba(0,0,0,0.3); white-space: nowrap;"><i class="fas fa-map-marker-alt me-1"></i>Kijana Hub Africa</div>',
+        className: 'custom-marker',
+        iconSize: [150, 40],
+        iconAnchor: [75, 20],
+        popupAnchor: [0, -20]
+    });
+    
+    // Add marker to the map
+    const marker = L.marker([-6.7919362787802555, 39.208469751664154], {icon: customIcon}).addTo(map);
+    
+    // Add popup with location information
+    marker.bindPopup(`
+        <div style="text-align: center; padding: 10px;">
+            <h6 style="margin: 0 0 10px 0; color: #1a4d2e;">Kijana Hub Africa</h6>
+            <p style="margin: 0 0 10px 0; color: #666;">Empowering youth through technology and innovation</p>
+            <div style="font-size: 12px; color: #888;">
+                <div><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM</div>
+                <div><i class="fas fa-phone"></i> +255 700 000 004</div>
+                <div><i class="fas fa-envelope"></i> info@kijanahub.africa</div>
+            </div>
+        </div>
+    `).openPopup();
+    
+    // Add a circle to highlight the area
+    L.circle([-6.7919362787802555, 39.208469751664154], {
+        color: '#41e081',
+        fillColor: '#41e081',
+        fillOpacity: 0.1,
+        radius: 500
+    }).addTo(map);
+});
 
 // Reset contact form
 function resetContactForm() {
