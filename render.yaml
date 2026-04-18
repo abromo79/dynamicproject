@@ -3,6 +3,8 @@ services:
     name: your-app
     env: php
     buildCommand: |
+      mkdir -p database
+      touch database/database.sqlite
       composer install --no-dev --optimize-autoloader
       php artisan migrate --force
       php artisan config:cache
