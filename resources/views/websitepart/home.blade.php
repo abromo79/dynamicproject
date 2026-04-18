@@ -1,8 +1,48 @@
 @extends('websitepart.layout')
 @section('content')
+<!-- Logo Section -->
+<section class="logo-hero-section py-5 position-relative overflow-hidden">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-12">
+                <div class="row align-items-center">
+                    <!-- Logo on Left -->
+                    <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                        <div class="logo-container position-relative d-inline-block">
+                            <img src="{{ asset('assets/logo.png') }}" alt="Kijana Hub Africa Logo" class="main-logo img-fluid animate-float" style="width: 500px;">
+                            
+                            <!-- Decorative Elements -->
+                            <div class="decorative-orbit">
+                                <div class="orbit-dot dot-1"></div>
+                                <div class="orbit-dot dot-2"></div>
+                                <div class="orbit-dot dot-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Welcome Message on Right -->
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <div class="welcome-content">
+                            <div class="welcome-bubble">
+                                <h2 class="welcome-title mb-2">Welcome to</h2>
+                                <h1 class="brand-name mb-0">Kijana Hub Africa</h1>
+                                <div class="welcome-divider"></div>
+                                <p class="welcome-tagline">Empowering Youth Through Technology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Hero Section -->
 <section class="home-hero-section position-relative overflow-hidden">
-    <div class="hero-bg"></div>
+    <!-- Background Slideshow -->
+    <div class="hero-bg-slide active" style="background-image: url('{{ asset('assets/k2.jpeg') }}');"></div>
+    <div class="hero-bg-slide" style="background-image: url('{{ asset('assets/k3.jpeg') }}');"></div>
+    <div class="hero-bg-slide" style="background-image: url('{{ asset('assets/k4.jpeg') }}');"></div>
+    <div class="hero-bg-slide" style="background-image: url('{{ asset('assets/k5.jpeg') }}');"></div>
     <div class="hero-particles"></div>
     <div class="container py-5 position-relative">
         <div class="row align-items-center min-vh-100">
@@ -364,6 +404,199 @@
 
 @push('styles')
 <style>
+/* Logo Section Styles */
+.logo-hero-section {
+    background: linear-gradient(135deg, rgba(26, 77, 46, 0.8) 0%, rgba(65, 224, 129, 0.8) 100%), 
+                url('{{ asset('assets/k2.jpeg') }}') center/cover no-repeat;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('{{ asset('assets/k2.jpeg') }}') center/cover no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.logo-container {
+    position: relative;
+    max-width: 600px;
+}
+
+.main-logo {
+    max-height: 400px;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+    transform: scale(1.05);
+}
+
+.welcome-content {
+    display: inline-block;
+}
+
+.welcome-bubble {
+    background: linear-gradient(135deg, rgba(227, 142, 24, 0.95) 0%, rgba(65, 224, 129, 0.95) 100%);
+    color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: float-bubble 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+.welcome-bubble::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+.welcome-title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #fff, var(--kh-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.welcome-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--kh-accent), transparent);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.welcome-tagline {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+    font-style: italic;
+}
+
+.decorative-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+}
+
+.orbit-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--kh-accent);
+    box-shadow: 0 0 20px var(--kh-accent);
+}
+
+.dot-1 {
+    top: 10%;
+    left: 50%;
+    animation: orbit-dot-1 8s linear infinite;
+}
+
+.dot-2 {
+    top: 50%;
+    right: 10%;
+    animation: orbit-dot-2 10s linear infinite;
+}
+
+.dot-3 {
+    bottom: 10%;
+    left: 50%;
+    animation: orbit-dot-3 12s linear infinite;
+}
+
+/* Animations */
+@keyframes float-bubble {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+@keyframes orbit-dot-1 {
+    0% {
+        transform: rotate(0deg) translateX(250px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit-dot-2 {
+    0% {
+        transform: rotate(120deg) translateX(250px) rotate(-120deg);
+    }
+    100% {
+        transform: rotate(480deg) translateX(250px) rotate(-480deg);
+    }
+}
+
+@keyframes orbit-dot-3 {
+    0% {
+        transform: rotate(240deg) translateX(250px) rotate(-240deg);
+    }
+    100% {
+        transform: rotate(600deg) translateX(250px) rotate(-600deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 /* Hero Section Styles */
 .home-hero-section {
     background: linear-gradient(135deg, #d8dc5a 0%, #41e081 100%);
@@ -378,13 +611,32 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('{{ asset('assets/k2.jpeg') }}');
-    opacity: 0.2;
-    animation: float 6s ease-in-out infinite;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0.2;
+    transition: opacity 1s ease-in-out;
+}
 
+.hero-bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-bg-slide.active {
+    opacity: 0.2;
+}
+
+.hero-bg-slide.prev {
+    opacity: 0;
 }
 
 .hero-particles {
@@ -881,14 +1133,47 @@
 
 @push('scripts')
 <script>
+// Background Slideshow
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.hero-bg-slide');
+    let currentSlide = 0;
+    const slideInterval = 4000; // 4 seconds per slide
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active', 'prev');
+            if (i === index) {
+                slide.classList.add('active');
+            } else if (i === (index - 1 + slides.length) % slides.length) {
+                slide.classList.add('prev');
+            }
+        });
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Initialize first slide
+    showSlide(0);
+    
+    // Start slideshow
+    setInterval(nextSlide, slideInterval);
+    
+    // Update parallax effect to work with slideshow
+    const heroParticles = document.querySelector('.hero-particles');
+    const activeSlide = document.querySelector('.hero-bg-slide.active');
+});
+
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const heroBg = document.querySelector('.hero-bg');
+    const activeSlide = document.querySelector('.hero-bg-slide.active');
     const heroParticles = document.querySelector('.hero-particles');
     
-    if (heroBg) {
-        heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+    if (activeSlide) {
+        activeSlide.style.transform = `translateY(${scrolled * 0.5}px)`;
     }
     
     if (heroParticles) {

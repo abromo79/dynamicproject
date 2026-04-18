@@ -29,6 +29,44 @@
         .btn-primary:hover { background:#36c773; border-color:#36c773; }
         .btn-accent:hover { background:#cdd34f; }
         
+        /* Navbar Styles */
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            gap: 0.1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-item {
+            margin: 0;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.25rem 0.75rem;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            color: var(--kh-accent);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
         /* Enhanced Footer Styles */
         .footer {
             background: linear-gradient(135deg, var(--kh-dark) 0%, #0d3d1f 100%);
