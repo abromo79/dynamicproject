@@ -1,11 +1,12 @@
 services:
   - type: web
-    name: your-app
+    name: laravel-app
     env: php
     buildCommand: |
       mkdir -p database
       touch database/database.sqlite
       composer install --no-dev --optimize-autoloader
+      php artisan config:clear
       php artisan migrate --force
       php artisan config:cache
     startCommand: php artisan serve --host 0.0.0.0 --port 10000
