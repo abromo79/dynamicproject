@@ -4,6 +4,7 @@ services:
     env: php
     buildCommand: |
       composer install --no-dev --optimize-autoloader
+      php -m | grep pgsql || (apt-get update && apt-get install -y php-pgsql)
       php artisan config:clear
       php artisan migrate --force
       php artisan config:cache
