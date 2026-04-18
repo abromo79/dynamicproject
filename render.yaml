@@ -4,8 +4,6 @@ services:
     env: php
     buildCommand: |
       composer install --no-dev --optimize-autoloader
-      mkdir -p /opt/render/project/src/database
-      touch /opt/render/project/src/database/database.sqlite
       php artisan config:clear
       php artisan migrate --force
       php artisan config:cache
