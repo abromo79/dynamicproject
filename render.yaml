@@ -1,7 +1,11 @@
 services:
   - type: web
     name: laravel-app
-    env: php
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /
     buildCommand: |
       # Install PostgreSQL driver (for build time)
       apt-get update && apt-get install -y libpq-dev
