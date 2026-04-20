@@ -43,5 +43,5 @@ RUN echo 'server { \
 
 EXPOSE 10000
 
-# Start both PHP-FPM and Nginx
-CMD service php8.3-fpm start && nginx -g "daemon off;"
+# FIXED START COMMAND
+CMD php-fpm -D && nginx -g "daemon off;"
