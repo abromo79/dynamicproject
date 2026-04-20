@@ -25,4 +25,5 @@ COPY nginx.conf /etc/nginx/sites-enabled/default
 
 EXPOSE 10000
 
+RUN php artisan migrate --force
 CMD php-fpm -D && nginx -g "daemon off;"
