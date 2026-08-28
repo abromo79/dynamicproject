@@ -13,19 +13,19 @@
                 <div class="row g-4 justify-content-center animate-fade-in-up animation-delay-400">
                     <div class="col-auto">
                         <div class="stat-card">
-                            <div class="stat-number">5000+</div>
+                            <div class="stat-number" data-target="5000">5000+</div>
                             <div class="stat-label">Lives Impacted</div>
                         </div>
                     </div>
                     <div class="col-auto">
                         <div class="stat-card">
-                            <div class="stat-number">25+</div>
+                            <div class="stat-number" data-target="25">25+</div>
                             <div class="stat-label">Communities Reached</div>
                         </div>
                     </div>
                     <div class="col-auto">
                         <div class="stat-card">
-                            <div class="stat-number">100+</div>
+                            <div class="stat-number" data-target="100">100+</div>
                             <div class="stat-label">Projects Completed</div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
             <h2 class="section-title text-center">Key Impact Metrics</h2>
             <p class="lead text-muted">Measurable results that drive our mission forward</p>
         </div>
-        
+
         <div class="row g-4" id="impact-stats-container">
             @foreach($impactStats as $item)
             <div class="col-md-6 col-lg-3">
@@ -60,7 +60,7 @@
             </div>
             @endforeach
         </div>
-        
+
         @if(count($impactStats) == 0)
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
@@ -115,7 +115,7 @@
             <h2 class="section-title text-center">Impact Areas</h2>
             <p class="lead text-muted">How we're creating change across different sectors</p>
         </div>
-        
+
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="impact-area-card h-100">
@@ -266,7 +266,7 @@
             <h2 class="section-title text-center">Success Stories</h2>
             <p class="lead text-muted">Real stories of transformation and success</p>
         </div>
-        
+
         <div class="row g-4">
             <div class="col-lg-4">
                 <div class="story-card h-100">
@@ -333,7 +333,7 @@
             <h2 class="section-title text-center">Our Impact Journey</h2>
             <p class="lead text-muted">Milestones and achievements over the years</p>
         </div>
-        
+
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-marker">
@@ -386,7 +386,7 @@
             <h2 class="section-title text-center">Our Partners</h2>
             <p class="lead text-muted">Organizations that support our mission</p>
         </div>
-        
+
         <div class="row g-4 align-items-center">
             <div class="col-6 col-md-3">
                 <div class="partner-logo text-center">
@@ -878,29 +878,29 @@
     .section-title {
         font-size: 2rem;
     }
-    
+
     .stat-card {
         padding: 15px 20px;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .impact-hero-section {
         min-height: auto;
         padding: 100px 0;
     }
-    
+
     .area-metrics {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .timeline::before {
         left: 20px;
     }
-    
+
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
         margin-left: 60px;
@@ -909,11 +909,11 @@
         padding-right: 0;
         text-align: left;
     }
-    
+
     .timeline-marker {
         left: 20px;
     }
-    
+
     .story-impact {
         flex-direction: column;
     }
@@ -963,9 +963,12 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 // Observe impact numbers
 document.addEventListener('DOMContentLoaded', function() {
-    const statNumbers = document.querySelectorAll('.stat-number');
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
     statNumbers.forEach(stat => {
-        counterObserver.observe(stat);
+        const target = Number.parseInt(stat.getAttribute('data-target'), 10);
+        if (!Number.isNaN(target)) {
+            counterObserver.observe(stat);
+        }
     });
 });
 

@@ -6,6 +6,7 @@
     <title>{{ $title ?? 'Kijana Hub Africa' }}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -439,23 +440,23 @@
                     <div class="footer-social-links mt-4">
                         <h5 class="social-title">Follow Us</h5>
                         <div class="social-icons">
-                            <a href="https://facebook.com/kijanahub" target="_blank" class="social-icon" title="Facebook">
-                                <i class="fab fa-facebook-f"></i>
+                            <a href="https://facebook.com/kijanahub" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://twitter.com/kijanahub" target="_blank" class="social-icon" title="Twitter">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://twitter.com/kijanahub" target="_blank" rel="noopener noreferrer" class="social-icon" title="Twitter">
+                                <i class="fa-brands fa-x-twitter"></i>
                             </a>
-                            <a href="https://instagram.com/kijanahub" target="_blank" class="social-icon" title="Instagram">
-                                <i class="fab fa-instagram"></i>
+                            <a href="https://instagram.com/kijanahub" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
                             </a>
-                            <a href="https://linkedin.com/company/kijanahub" target="_blank" class="social-icon" title="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="https://linkedin.com/company/kijanahub" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
                             </a>
-                            <a href="https://youtube.com/kijanahub" target="_blank" class="social-icon" title="YouTube">
-                                <i class="fab fa-youtube"></i>
+                            <a href="https://youtube.com/kijanahub" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
                             </a>
-                            <a href="https://wa.me/255700000000" target="_blank" class="social-icon" title="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/255700000000" target="_blank" rel="noopener noreferrer" class="social-icon" title="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
                     </div>
