@@ -41,14 +41,19 @@ class AdminController extends Controller
             return back()->withErrors(['email' => 'Invalid admin credentials.'])->onlyInput('email');
         }
 
+        // store admin info in session and regenerate session id to avoid fixation
         session(['admin_id' => $admin->id, 'admin_name' => $admin->name, 'admin_role' => $admin->role]);
+        $request->session()->regenerate();
 
         return redirect()->route('admin.dashboard');
     }
 
-    public function logout(): RedirectResponse
+    public function logout(Request $request): RedirectResponse
     {
-        session()->forget(['admin_id', 'admin_name', 'admin_role']);
+        // invalidate session and regenerate CSRF token
+        $request->session()->forget(['admin_id', 'admin_name', 'admin_role']);
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return redirect()->route('admin.login');
     }
 

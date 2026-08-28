@@ -23,12 +23,12 @@
             --kh-dark: #1a4d2e;
             --kh-light: #e8f5e8;
         }
-        
+
         .btn-primary { background:var(--kh-primary); border-color:var(--kh-primary); }
         .btn-accent { background:var(--kh-accent); color:#333; }
         .btn-primary:hover { background:#36c773; border-color:#36c773; }
         .btn-accent:hover { background:#cdd34f; }
-        
+
         /* Navbar Styles */
         .navbar-nav {
             display: flex;
@@ -36,44 +36,44 @@
             margin: 0;
             padding: 0;
             align-items: center;
-            gap: 0.1rem;
+            gap: 1rem; /* increased spacing between items */
             flex-wrap: wrap;
             justify-content: center;
         }
-        
+
         .nav-item {
             margin: 0;
         }
-        
+
         .nav-link {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 0.25rem 0.75rem;
-            border-radius: 5px;
+            transition: all 0.25s ease;
+            padding: 0.5rem 1rem; /* more clickable area */
+            border-radius: 6px;
             display: inline-block;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
-        
+
         .nav-link:hover {
             color: #fff;
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
         }
-        
+
         .nav-link.active {
             color: var(--kh-accent);
             background: rgba(255, 255, 255, 0.15);
         }
-        
+
         /* Enhanced Footer Styles */
         .footer {
             background: linear-gradient(135deg, var(--kh-dark) 0%, #0d3d1f 100%);
             position: relative;
             overflow: hidden;
         }
-        
+
         .footer::before {
             content: '';
             position: absolute;
@@ -85,25 +85,25 @@
             opacity: 0.05;
             pointer-events: none;
         }
-        
+
         .footer > .container {
             position: relative;
             z-index: 1;
         }
-        
+
         .footer-title {
             color: #fff;
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
-        
+
         .footer-description {
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
-        
+
         .footer-heading {
             color: #fff;
             font-size: 1.1rem;
@@ -112,7 +112,7 @@
             position: relative;
             padding-bottom: 0.5rem;
         }
-        
+
         .footer-heading::after {
             content: '';
             position: absolute;
@@ -123,17 +123,17 @@
             background: var(--kh-accent);
             border-radius: 1px;
         }
-        
+
         .footer-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .footer-list li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-link {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
@@ -141,17 +141,17 @@
             display: inline-flex;
             align-items: center;
         }
-        
+
         .footer-link:hover {
             color: var(--kh-accent);
             transform: translateX(3px);
         }
-        
+
         .footer-link i {
             font-size: 0.9rem;
             width: 16px;
         }
-        
+
         /* Social Media Icons */
         .social-title {
             color: #fff;
@@ -159,13 +159,13 @@
             font-weight: 600;
             margin-bottom: 1rem;
         }
-        
+
         .social-icons {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
-        
+
         .social-icon {
             width: 40px;
             height: 40px;
@@ -179,115 +179,115 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .social-icon:hover {
             background: var(--kh-accent);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(45, 179, 160, 0.3);
         }
-        
+
         /* Contact Information */
         .contact-info {
             margin-bottom: 1.5rem;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
             margin-bottom: 1rem;
         }
-        
+
         .contact-item i {
             color: var(--kh-accent);
             font-size: 1.1rem;
             margin-top: 2px;
             width: 20px;
         }
-        
+
         .contact-details {
             flex: 1;
         }
-        
+
         .contact-details strong {
             color: #fff;
             font-weight: 600;
         }
-        
+
         .contact-details br {
             line-height: 1.4;
         }
-        
+
         /* Newsletter */
         .newsletter-title {
             color: #fff;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        
+
         .newsletter-desc {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-        
+
         .newsletter-form .input-group {
             border-radius: 25px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         .newsletter-form .form-control {
             border: none;
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
             padding: 12px 20px;
         }
-        
+
         .newsletter-form .form-control::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
-        
+
         .newsletter-form .form-control:focus {
             background: rgba(255, 255, 255, 0.15);
             box-shadow: none;
             color: #fff;
         }
-        
+
         .newsletter-form .btn {
             border: none;
             padding: 12px 20px;
             font-weight: 500;
         }
-        
+
         /* Footer Bottom */
         .footer-bottom {
             border-color: rgba(255, 255, 255, 0.1) !important;
         }
-        
+
         .copyright {
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
         }
-        
+
         .footer-bottom-links {
             display: flex;
             gap: 20px;
             justify-content: flex-end;
             flex-wrap: wrap;
         }
-        
+
         .bottom-link {
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
-        
+
         .bottom-link:hover {
             color: var(--kh-accent);
         }
-        
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -310,42 +310,60 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(65, 224, 129, 0.3);
         }
-        
+
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .back-to-top:hover {
             background: var(--kh-primary);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(45, 179, 160, 0.4);
         }
-        
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .footer-bottom-links {
                 justify-content: center;
                 margin-top: 1rem;
             }
-            
+
             .social-icons {
                 justify-content: center;
             }
-            
+
             .contact-item {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 8px;
             }
-            
+
             .newsletter-form .input-group {
                 flex-direction: column;
                 border-radius: 10px;
             }
-            
+
             .newsletter-form .btn {
                 border-radius: 0 0 10px 10px;
+            }
+        }
+
+        /* Dropdown open on hover for desktop/tablet */
+        @media (min-width: 768px) {
+            .navbar .dropdown:hover > .dropdown-menu {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .navbar .dropdown .dropdown-menu {
+                margin-top: 0;
+                transition: opacity 150ms ease, transform 150ms ease;
+                transform: translateY(6px);
+                opacity: 0;
+                visibility: hidden;
             }
         }
     </style>
@@ -360,9 +378,36 @@
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                @foreach([['home','Home'],['about','About'],['programs','Programs'],['opportunities','Opportunities'],['innovation-hub','Innovation Hub'],['impact','Impact'],['partnerships','Partnerships'],['events','Events'],['blog','Blog'],['get-involved','Get Involved'],['contact','Contact']] as [$r,$label])
-                    <li class="nav-item"><a class="nav-link" href="{{ route($r) }}">{{ $label }}</a></li>
-                @endforeach
+                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="{{ route('about') }}">About Us</a></li>
+                        <li><a class="dropdown-item" href="{{ route('impact') }}">Impact</a></li>
+                        <li><a class="dropdown-item" href="{{ route('partnerships') }}">Partnerships</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Programs</a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="programsDropdown">
+                        <li><a class="dropdown-item" href="{{ route('programs') }}">Our Programs</a></li>
+                        <li><a class="dropdown-item" href="{{ route('innovation-hub') }}">Innovation Hub</a></li>
+                        <li><a class="dropdown-item" href="{{ route('opportunities') }}">Opportunities</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Get Involved</a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="getInvolvedDropdown">
+                        <li><a class="dropdown-item" href="{{ route('get-involved') }}">Get Involved</a></li>
+                        <li><a class="dropdown-item" href="{{ route('events') }}">Events</a></li>
+                        <li><a class="dropdown-item" href="{{ route('blog') }}">Blog</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -388,7 +433,7 @@
                         </div>
                     </div>
                     <p class="footer-description">
-                        Empowering youth across Africa through technology, innovation, and digital inclusion. 
+                        Empowering youth across Africa through technology, innovation, and digital inclusion.
                         Where youth potential and technology converge to create sustainable impact.
                     </p>
                     <div class="footer-social-links mt-4">
@@ -416,7 +461,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Quick Links -->
             <div class="col-lg-2 col-md-6">
                 <div class="footer-links">
@@ -431,7 +476,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Resources -->
             <div class="col-lg-2 col-md-6">
                 <div class="footer-links">
@@ -442,11 +487,13 @@
                         <li><a href="{{ route('blog') }}" class="footer-link"><i class="fas fa-blog me-2"></i>Blog</a></li>
                         <li><a href="{{ route('get-involved') }}" class="footer-link"><i class="fas fa-heart me-2"></i>Get Involved</a></li>
                         <li><a href="{{ route('contact') }}" class="footer-link"><i class="fas fa-envelope me-2"></i>Contact</a></li>
-                        <li><a href="#" class="footer-link"><i class="fas fa-download me-2"></i>Resources</a></li>
                     </ul>
+                    <div class="mt-3">
+                        <a href="{{ route('admin.login') }}" class="btn btn-outline-light btn-sm">Admin Login</a>
+                    </div>
                 </div>
             </div>
-            
+
             <!-- Contact & Newsletter -->
             <div class="col-lg-4">
                 <div class="footer-contact">
@@ -485,7 +532,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Newsletter Subscription -->
                     <div class="footer-newsletter mt-4">
                         <h6 class="newsletter-title">Subscribe to Our Newsletter</h6>
@@ -503,7 +550,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Bottom Footer -->
         <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
             <div class="row align-items-center">
@@ -564,17 +611,17 @@ document.addEventListener('DOMContentLoaded', function() {
         newsletterForm.addEventListener('submit', function(e) {
             const emailInput = this.querySelector('input[type="email"]');
             const submitButton = this.querySelector('button[type="submit"]');
-            
+
             // Show loading state
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
             submitButton.disabled = true;
-            
+
             // Simulate form submission (remove this in production)
             setTimeout(() => {
                 submitButton.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
                 submitButton.style.background = '#28a745';
                 emailInput.value = '';
-                
+
                 // Reset after 3 seconds
                 setTimeout(() => {
                     submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Subscribe';
@@ -584,7 +631,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
-    
+
     // Add smooth scroll to footer links
     const footerLinks = document.querySelectorAll('.footer-link');
     footerLinks.forEach(link => {
@@ -598,15 +645,15 @@ document.addEventListener('DOMContentLoaded', function() {
             ripple.style.height = '10px';
             ripple.style.animation = 'ripple 0.6s ease-out';
             ripple.style.pointerEvents = 'none';
-            
+
             const rect = this.getBoundingClientRect();
             ripple.style.left = (e.clientX - rect.left - 5) + 'px';
             ripple.style.top = (e.clientY - rect.top - 5) + 'px';
-            
+
             this.style.position = 'relative';
             this.style.overflow = 'hidden';
             this.appendChild(ripple);
-            
+
             setTimeout(() => {
                 ripple.remove();
             }, 600);
@@ -625,6 +672,31 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+</script>
+<script>
+    // Enable hover-to-open for navbar dropdowns on desktop/tablet
+    (function () {
+        function addHoverListeners() {
+            if (window.innerWidth < 768) return; // only for wider screens
+            document.querySelectorAll('.navbar .dropdown').forEach(function (dd) {
+                dd.addEventListener('mouseenter', function () {
+                    this.classList.add('show');
+                    const menu = this.querySelector('.dropdown-menu');
+                    if (menu) menu.classList.add('show');
+                });
+                dd.addEventListener('mouseleave', function () {
+                    this.classList.remove('show');
+                    const menu = this.querySelector('.dropdown-menu');
+                    if (menu) menu.classList.remove('show');
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', addHoverListeners);
+        window.addEventListener('resize', function () {
+            // no-op: CSS media query controls visual behaviour; page reload recommended if switching sizes
+        });
+    })();
 </script>
 @stack('scripts')
 </body>

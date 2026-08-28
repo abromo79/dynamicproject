@@ -61,7 +61,7 @@
                 <div class="image-container">
                     <img src="{{ asset('assets/k8.jpeg') }}" alt="Youth Technology Hub" class="img-fluid rounded-3 shadow-lg">
                     <div class="floating-card">
-                        <h5 class="text-primary fw-bold">Starting in Tanzania</h5>
+                        <h5 class="text-primary fw-bold">Join Us</h5>
                         <p class="text-muted mb-0">Expanding Across Africa</p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
             <h2 class="section-title text-center">Our Purpose</h2>
             <p class="lead text-muted">Driving change through technology and innovation</p>
         </div>
-        
+
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="vision-card h-100 p-4 text-center">
@@ -112,7 +112,7 @@
             <h2 class="section-title text-center">Our Objectives</h2>
             <p class="lead text-muted">Key areas of focus for maximum impact</p>
         </div>
-        
+
         <div class="row g-4" id="objectives-container">
             <div class="col-md-6 col-lg-4">
                 <div class="objective-card p-4 h-100">
@@ -179,14 +179,14 @@
             <h2 class="section-title text-center">Founders and Leadership</h2>
             <p class="lead text-muted">Meet the visionaries behind Kijana Hub Africa</p>
         </div>
-        
+
         <div class="row g-4" id="team-container">
             @foreach($teamMembers as $member)
             <div class="col-md-6 col-lg-4 team-member" data-member-id="{{ $member->id }}">
                 <div class="team-card h-100">
                     <div class="team-image-container">
-                        <img src="{{ $member->image ? asset('storage/' . $member->image) : asset('assets/k7.jpeg') }}" 
-                             alt="{{ $member->name }}" 
+                        <img src="{{ $member->image ? asset('storage/' . $member->image) : asset('assets/k7.jpeg') }}"
+                             alt="{{ $member->name }}"
                              class="team-image">
                         <div class="team-overlay">
                             <div class="social-links">
@@ -230,7 +230,7 @@
             <h2 class="section-title text-center">Who We Serve</h2>
             <p class="lead text-muted">Our target beneficiaries across Tanzania and expanding across Africa</p>
         </div>
-        
+
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
                 <div class="beneficiary-card text-center p-4">
@@ -333,7 +333,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-   
+
 }
 
 .stat-card {
@@ -675,15 +675,15 @@
     .section-title {
         font-size: 2rem;
     }
-    
+
     .stat-card {
         padding: 15px 20px;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .hero-section {
         min-height: auto;
         padding: 100px 0;
@@ -738,7 +738,7 @@ function showMemberDetails(memberId) {
         const position = memberElement.querySelector('.team-position').textContent;
         const bio = memberElement.querySelector('.team-bio').textContent;
         const image = memberElement.querySelector('.team-image').src;
-        
+
         const modalBody = document.getElementById('memberModalBody');
         modalBody.innerHTML = `
             <div class="text-center mb-4">
@@ -748,7 +748,7 @@ function showMemberDetails(memberId) {
             <p class="text-muted text-center mb-4">${position}</p>
             <p>${bio}</p>
         `;
-        
+
         const modal = new bootstrap.Modal(document.getElementById('memberModal'));
         modal.show();
     }
